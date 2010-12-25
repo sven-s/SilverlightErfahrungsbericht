@@ -7,7 +7,13 @@ namespace dnughh.SilverlightErfahrungen.Contract
 {
     public interface ISilverlightService
     {
+#if NETCLR
+        void OnlyNetClr();
+#endif
 
+#if SILVERLIGHT
+        void  OnlySilverlight();
+#endif
 
     }
 }
