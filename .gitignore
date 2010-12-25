@@ -2,6 +2,7 @@
 [Rr]elease/
 [Bb]uild/
 [Bb]in/
+[Cc]lient[Bb]in/
 [Oo]bj/
 _ReSharper.*/
 *.suo
