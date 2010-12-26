@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net\1.2.10.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -56,6 +59,7 @@
     <Content Include="ClientBin\dnughh.SilverlightErfahrungen.SilverlightApp.xap" />
     <Content Include="dnughh.SilverlightErfahrungen.SilverlightAppTestPage.aspx" />
     <Content Include="dnughh.SilverlightErfahrungen.SilverlightAppTestPage.html" />
+    <Content Include="Global.asax" />
     <Content Include="Silverlight.js" />
     <Content Include="UserGroupEvent.svc" />
     <Content Include="Web.config" />
@@ -67,6 +71,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

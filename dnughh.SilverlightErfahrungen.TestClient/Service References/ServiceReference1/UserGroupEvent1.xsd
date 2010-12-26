@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://dotnet-usergroup-hamburg.de//UserGroupEventService/" elementFormDefault="qualified" targetNamespace="http://dotnet-usergroup-hamburg.de//UserGroupEventService/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetUserGroupEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eventGuid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserGroupEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserGroupEventResult" nillable="true" type="tns:UserGroupEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserGroupEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Guid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserGroupEvent" nillable="true" type="tns:UserGroupEvent" />
+</xs:schema>

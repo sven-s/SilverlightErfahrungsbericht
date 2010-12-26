@@ -56,6 +56,9 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\dnughh.SilverlightErfahrungen.Proxies\ObjectClient.cs">
+      <Link>ObjectClient.cs</Link>
+    </Compile>
     <Compile Include="..\dnughh.SilverlightErfahrungen.Proxies\UserGroupEventServiceProxy.cs">
       <Link>UserGroupEventServiceProxy.cs</Link>
     </Compile>

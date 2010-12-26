@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9e6662fe-d040-4f50-beab-1c94d29ea873" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50738/UserGroupEvent.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserGroupEvent.xsd" MetadataType="Schema" ID="728f4084-05b2-41cd-83cd-86d883077860" SourceId="1" SourceUrl="http://localhost:50738/UserGroupEvent.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserGroupEvent1.xsd" MetadataType="Schema" ID="55c30fca-d8a5-421f-9dcc-8e798741b4e0" SourceId="1" SourceUrl="http://localhost:50738/UserGroupEvent.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserGroupEventService.wsdl" MetadataType="Wsdl" ID="89f7050d-27ab-43df-9441-c0a06111de7b" SourceId="1" SourceUrl="http://localhost:50738/UserGroupEvent.svc?wsdl" />
+    <MetadataFile FileName="UserGroupEvent.disco" MetadataType="Disco" ID="00a33345-7e18-4fc0-a9ab-5d267468feeb" SourceId="1" SourceUrl="http://localhost:50738/UserGroupEvent.svc?disco" />
+    <MetadataFile FileName="UserGroupEvent.wsdl" MetadataType="Wsdl" ID="e3b773af-3dc4-4fd8-aa4d-ecce95423c9f" SourceId="1" SourceUrl="http://localhost:50738/UserGroupEvent.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

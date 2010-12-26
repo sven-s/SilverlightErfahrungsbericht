@@ -17,5 +17,11 @@ Notizen für SL Vortrag
  - Daten gehen über die Leitung
  - max 15. Properties pro Contract (und nie einen DataSet)
 
+Tipps bei WCF Problemen:
+- mit Internet Explorer direkt auf Service zugreifen (http://localhost:50738/UserGroupEvent.svc)
+- TestClient mit automatischer ServiceReference erstellen
+
+
 Offene Fragen:
 String oder string
+[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]

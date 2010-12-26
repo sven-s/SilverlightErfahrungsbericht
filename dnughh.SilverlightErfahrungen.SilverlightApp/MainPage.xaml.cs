@@ -25,22 +25,36 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-
+            /*
             AsyncCallback asyncCallBack = delegate(IAsyncResult result)
             {
                 var response = ((IAsyncUserGroupEventService)result.AsyncState).EndGetUserGroupEvent(result);
                 Dispatcher.BeginInvoke(() => SetUserGroupEventData(response));
 
             };
-            var proxy = new UserGroupEventServiceProxy();
-            proxy.Channel.BeginGetUserGroupEvent("123", asyncCallBack, proxy);
+            var channel = new UserGroupEventServiceProxy().Channel;
+
+            channel.BeginGetUserGroupEvent("123", asyncCallBack, channel);
+            */
+              
+            var objectClient = new ObjectClient<IAsyncUserGroupEventService>("BasicHttpBinding_IAsyncUserGroupEventService");
+            objectClient.Begin("GetUserGroupEvent", OnObjectServiceCallback, null, "F488D20B-FC27-4631-9FB9-83AF616AB5A6");
+
 
 
         }
 
+
+        private void OnObjectServiceCallback(Object sender, ObjectClient<IAsyncUserGroupEventService>.ClientEventArgs ea)
+        {
+            var data = ea.LoadResult<UserGroupEvent>();
+            Dispatcher.BeginInvoke(() => this.TxInfo.Text = data.Description);
+   
+        }
+        /*
         private void SetUserGroupEventData(UserGroupEvent data)
         {
             this.TxInfo.Text = data.Description;
-        }
+        }*/
     }
 }
