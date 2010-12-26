@@ -1,0 +1,21 @@
+Notizen für SL Vortrag
+
+1. Erstellen von Verküpfungen
+ - Technisch können die selben .NET SL Assemblies verwendet werden
+ - Visual Studio erlaubt aber keine Querreferenzen 
+ - Gemeinsame Helperklassen lassen sich so leichter erstellen
+
+2. WCF
+ - Service Contract Attribut nie direkt an der Implementation anwenden
+ - Interfaces immer so simpel wie möglich halten
+ - 3-7 Operations pro Service Contract
+ - WCF ist kein Framework API!
+ 
+ - DataContract/Datamember Opt-In Serializer 
+ - Serializable Opt-Out Serializer (daher nicht anwenden)
+ - DataContract sollte ebenfalls flach und einfach gestaltet sein
+ - Daten gehen über die Leitung
+ - max 15. Properties pro Contract (und nie einen DataSet)
+
+Offene Fragen:
+String oder string

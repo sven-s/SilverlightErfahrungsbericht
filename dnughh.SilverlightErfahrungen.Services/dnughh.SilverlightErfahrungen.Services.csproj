@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{34C27F0F-2724-47D6-AEC2-94A25FB7E51B}</ProjectGuid>
+    <ProjectGuid>{4777A08C-6A81-472E-B73E-83A6A6D7B86A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>dnughh.SilverlightErfahrungen.Contract</RootNamespace>
-    <AssemblyName>dnughh.SilverlightErfahrungen.Contract</AssemblyName>
+    <RootNamespace>dnughh.SilverlightErfahrungen.Services</RootNamespace>
+    <AssemblyName>dnughh.SilverlightErfahrungen.Services</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;NETCLR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -33,8 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAsyncUserGroupEventService.cs" />
-    <Compile Include="Information.cs" />
-    <Compile Include="IUserGroupEventService.cs" />
-    <Compile Include="UserGroupEvent.cs" />
-    <Compile Include="ISilverlightService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserGroupEventService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnughh.SilverlightErfahrungen.Contracts\dnughh.SilverlightErfahrungen.Contracts.csproj">
+      <Project>{34C27F0F-2724-47D6-AEC2-94A25FB7E51B}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

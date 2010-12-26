@@ -89,6 +89,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnughh.SilverlightErfahrungen.Contracts.SL\dnughh.SilverlightErfahrungen.Contracts.SL.csproj">
+      <Project>{5A2955E8-3133-4D56-9031-B45C484CDA83}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Contracts.SL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dnughh.SilverlightErfahrungen.Proxies.SL\dnughh.SilverlightErfahrungen.Proxies.SL.csproj">
+      <Project>{F0AC11F5-1236-40FB-9F7E-0FE2FB1F94FF}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Proxies.SL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5A2955E8-3133-4D56-9031-B45C484CDA83}</ProjectGuid>
+    <ProjectGuid>{F0AC11F5-1236-40FB-9F7E-0FE2FB1F94FF}</ProjectGuid>
     <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>dnughh.SilverlightErfahrungen.Contracts.SL</RootNamespace>
-    <AssemblyName>dnughh.SilverlightErfahrungen.Contracts.SL</AssemblyName>
+    <RootNamespace>dnughh.SilverlightErfahrungen.Proxies.SL</RootNamespace>
+    <AssemblyName>dnughh.SilverlightErfahrungen.Proxies.SL</AssemblyName>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -47,7 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -57,22 +56,16 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\IAsyncUserGroupEventService.cs">
-      <Link>IAsyncUserGroupEventService.cs</Link>
-    </Compile>
-    <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\Information.cs">
-      <Link>Information.cs</Link>
-    </Compile>
-    <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\ISilverlightService.cs">
-      <Link>ISilverlightService.cs</Link>
-    </Compile>
-    <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\IUserGroupEventService.cs">
-      <Link>IUserGroupEventService.cs</Link>
-    </Compile>
-    <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\UserGroupEvent.cs">
-      <Link>UserGroupEvent.cs</Link>
+    <Compile Include="..\dnughh.SilverlightErfahrungen.Proxies\UserGroupEventServiceProxy.cs">
+      <Link>UserGroupEventServiceProxy.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnughh.SilverlightErfahrungen.Contracts.SL\dnughh.SilverlightErfahrungen.Contracts.SL.csproj">
+      <Project>{5A2955E8-3133-4D56-9031-B45C484CDA83}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Contracts.SL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

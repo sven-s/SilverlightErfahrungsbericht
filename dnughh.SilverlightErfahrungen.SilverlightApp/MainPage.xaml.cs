@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using dnughh.SilverlightErfahrungen.Contract;
+using dnughh.SilverlightErfahrungen.Proxies;
 
 namespace dnughh.SilverlightErfahrungen.SilverlightApp
 {
@@ -17,6 +19,28 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
         public MainPage()
         {
             InitializeComponent();
+
+            Loaded += new RoutedEventHandler(MainPage_Loaded);
+        }
+
+        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            AsyncCallback asyncCallBack = delegate(IAsyncResult result)
+            {
+                var response = ((IAsyncUserGroupEventService)result.AsyncState).EndGetUserGroupEvent(result);
+                Dispatcher.BeginInvoke(() => SetUserGroupEventData(response));
+
+            };
+            var proxy = new UserGroupEventServiceProxy();
+            proxy.Channel.BeginGetUserGroupEvent("123", asyncCallBack, proxy);
+
+
+        }
+
+        private void SetUserGroupEventData(UserGroupEvent data)
+        {
+            this.TxInfo.Text = data.Description;
         }
     }
 }

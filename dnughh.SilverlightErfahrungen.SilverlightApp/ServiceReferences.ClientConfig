@@ -1,0 +1,19 @@
+﻿<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="myBinding" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647" />
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:50738/UserGroupEvent.svc"
+        binding="basicHttpBinding" bindingConfiguration="myBinding"
+        contract="dnughh.SilverlightErfahrungen.Contract.IAsyncUserGroupEventService"
+        name="BasicHttpBinding_IAsyncUserGroupEventService" />
+    </client>
+  </system.serviceModel>
+  <appSettings>
+    <add key="ReportURLProtokollMasseHerstellung" value="http://localhost/ReportServer?%2fEtv%2fMasseherstellung"/>
+    <add key="ReportURLDangerPhrases" value="http://localhost/ReportServer?%2fEtv%2fDangerPhrases"/>
+  </appSettings>
+</configuration>
