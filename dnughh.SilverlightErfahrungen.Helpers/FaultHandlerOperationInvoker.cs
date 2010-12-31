@@ -42,7 +42,7 @@ namespace dnughh.SilverlightErfahrungen.Helpers
                         var pi = invokerType.GetProperty("Method");
                         var mi = (MethodInfo) pi.GetValue(InnerOperationInvoker, null);
                         var returnType = mi.ReturnType;
-                        var interfaceType = returnType.GetInterface("dnughh.SilverlightErfahrungen.Helpers");
+                        var interfaceType = returnType.GetInterface("dnughh.SilverlightErfahrungen.Helpers.IContainsFaultDetail");
                         if (interfaceType != null)
                         {
                             returnObject = Activator.CreateInstance(returnType);

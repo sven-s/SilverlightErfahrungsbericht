@@ -88,4 +88,5 @@ namespace dnughh.SilverlightErfahrungen.Proxies
             ((IClientChannel)proxy).EndClose(asyncResult);
         }
     }
+
 }

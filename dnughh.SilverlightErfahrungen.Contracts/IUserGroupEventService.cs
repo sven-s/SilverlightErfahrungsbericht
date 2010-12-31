@@ -1,4 +1,5 @@
 using System.ServiceModel;
+using dnughh.SilverlightErfahrungen.Helpers;
 
 namespace dnughh.SilverlightErfahrungen.Contract
 {
@@ -8,6 +9,13 @@ namespace dnughh.SilverlightErfahrungen.Contract
 
         [OperationContract]
         UserGroupEvent GetUserGroupEvent(string eventGuid);
+
+
+        #if NETCLR
+        [FaultHandlerOperationBehavior]
+#endif
+        [OperationContract]
+        UserGoupEventWithFault GetUserGroupEventWithFault(string eventGuid);
 
     }
 }

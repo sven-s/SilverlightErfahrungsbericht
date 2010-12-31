@@ -93,6 +93,10 @@
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\dnughh.SilverlighErfahrungen.Helpers.SL\dnughh.SilverlightErfahrungen.Helpers.SL.csproj">
+      <Project>{9915A29C-175C-49DC-AFE9-884B7F82F3C4}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Helpers.SL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\dnughh.SilverlightErfahrungen.Contracts.SL\dnughh.SilverlightErfahrungen.Contracts.SL.csproj">
       <Project>{5A2955E8-3133-4D56-9031-B45C484CDA83}</Project>
       <Name>dnughh.SilverlightErfahrungen.Contracts.SL</Name>

@@ -69,10 +69,19 @@
     <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\IUserGroupEventService.cs">
       <Link>IUserGroupEventService.cs</Link>
     </Compile>
+    <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\UserGoupEventWithFault.cs">
+      <Link>UserGoupEventWithFault.cs</Link>
+    </Compile>
     <Compile Include="..\dnughh.SilverlightErfahrungen.Contracts\UserGroupEvent.cs">
       <Link>UserGroupEvent.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnughh.SilverlighErfahrungen.Helpers.SL\dnughh.SilverlightErfahrungen.Helpers.SL.csproj">
+      <Project>{9915A29C-175C-49DC-AFE9-884B7F82F3C4}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Helpers.SL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

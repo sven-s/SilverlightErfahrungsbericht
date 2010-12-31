@@ -15,5 +15,10 @@ namespace dnughh.SilverlightErfahrungen.Services
                            Title = "WCF & SL"
                        };
         }
+
+        public UserGoupEventWithFault GetUserGroupEventWithFault(string eventGuid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

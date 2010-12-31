@@ -49,6 +49,10 @@
       <Project>{34C27F0F-2724-47D6-AEC2-94A25FB7E51B}</Project>
       <Name>dnughh.SilverlightErfahrungen.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\dnughh.SilverlightErfahrungen.Helpers\dnughh.SilverlightErfahrungen.Helpers.csproj">
+      <Project>{9AD81337-7EEF-40C0-A066-72D30C3659CE}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

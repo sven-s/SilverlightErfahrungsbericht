@@ -45,12 +45,19 @@
     <Compile Include="IAsyncUserGroupEventService.cs" />
     <Compile Include="Information.cs" />
     <Compile Include="IUserGroupEventService.cs" />
+    <Compile Include="UserGoupEventWithFault.cs" />
     <Compile Include="UserGroupEvent.cs" />
     <Compile Include="ISilverlightService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Client\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dnughh.SilverlightErfahrungen.Helpers\dnughh.SilverlightErfahrungen.Helpers.csproj">
+      <Project>{9AD81337-7EEF-40C0-A066-72D30C3659CE}</Project>
+      <Name>dnughh.SilverlightErfahrungen.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

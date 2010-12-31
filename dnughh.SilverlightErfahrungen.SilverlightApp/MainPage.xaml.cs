@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -29,6 +30,15 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
             var channel = new UserGroupEventServiceProxy("BasicHttpBinding_IAsyncUserGroupEventService").Channel;
             channel.BeginGetUserGroupEvent("123", ProcessResult, channel);
 
+
+            using (var scope = new OperationContextScope((IContextChannel)channel))
+            {
+                var messageHeadersElement = OperationContext.Current.OutgoingMessageHeaders;
+                messageHeadersElement.Add(MessageHeader.CreateHeader("DoesNotHandleFault", "", true));
+                channel.BeginGetUserGroupEventWithFault("123", ProcessResultWithFault, channel);
+            }
+
+
             //var objectClient = new ObjectClient<IAsyncUserGroupEventService>("BasicHttpBinding_IAsyncUserGroupEventService");
             //objectClient.Begin("GetUserGroupEvent", OnObjectServiceCallback, null, "F488D20B-FC27-4631-9FB9-83AF616AB5A6");
         }
@@ -49,6 +59,32 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
             Dispatcher.BeginInvoke(() => SetUserGroupEventData(response));
             proxy.Close();
 
+        }
+
+        private void ProcessResultWithFault(IAsyncResult asyncResult)
+        {
+            var proxy = new UserGroupEventServiceProxy("BasicHttpBinding_IAsyncUserGroupEventService");
+
+
+           
+            var response = proxy.Result(asyncResult).EndGetUserGroupEventWithFault(asyncResult);
+
+            if (response.FaultDetail == null)
+            {
+                Dispatcher.BeginInvoke(() => SetUserGroupEventData(response));
+            }
+            else
+            {
+               // Log.WarnFormat("LoadSerie() {0}", response.FaultDetail.Message);
+            }
+
+            proxy.Close();
+
+        }
+
+        private void SetUserGroupEventData(UserGoupEventWithFault data)
+        {
+            this.TxInfo.Text = data.Description;
         }
 
         private void SetUserGroupEventData(UserGroupEvent data)
