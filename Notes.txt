@@ -25,3 +25,5 @@ Tipps bei WCF Problemen:
 Offene Fragen:
 String oder string
 [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
+
+test
