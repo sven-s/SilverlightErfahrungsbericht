@@ -4,6 +4,7 @@
 [Bb]in/
 [Cc]lient[Bb]in/
 [Oo]bj/
+[Ll]og/
 _ReSharper.*/
 *.suo
 *.sln.cache
