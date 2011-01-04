@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using dnughh.SilverlightErfahrungen.Contract;
 using dnughh.SilverlightErfahrungen.Proxies;
 
@@ -21,16 +13,31 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
         public MainPage()
         {
             InitializeComponent();
-
-            Loaded += new RoutedEventHandler(MainPage_Loaded);
+            Loaded += MainPageLoaded;
         }
 
-        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        void MainPageLoaded(object sender, RoutedEventArgs e)
         {
+            
+            // Simple Version
+            var basicHttpBinding = new BasicHttpBinding();
+            var endpointAddress = new EndpointAddress("http://localhost:50738/UserGroupEvent.svc");
+            var userGroupEventService = new ChannelFactory<IAsyncUserGroupEventService>(basicHttpBinding, endpointAddress).CreateChannel();
+
+            AsyncCallback asyncCallBack = delegate(IAsyncResult result)
+            {
+                var response = ((IAsyncUserGroupEventService)result.AsyncState).EndGetUserGroupEvent(result);
+                Dispatcher.BeginInvoke(() => SetUserGroupEventData(response));
+            };
+            userGroupEventService.BeginGetUserGroupEvent("123", asyncCallBack, userGroupEventService);
+
+
+            // Deluxe Variante mit eigenem Proxy
             var channel = new UserGroupEventServiceProxy("BasicHttpBinding_IAsyncUserGroupEventService").Channel;
             channel.BeginGetUserGroupEvent("123", ProcessResult, channel);
 
 
+            // Variante mit Faulthandler 
             using (var scope = new OperationContextScope((IContextChannel)channel))
             {
                 var messageHeadersElement = OperationContext.Current.OutgoingMessageHeaders;
@@ -58,14 +65,11 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
             var response = proxy.Result(asyncResult).EndGetUserGroupEvent(asyncResult);
             Dispatcher.BeginInvoke(() => SetUserGroupEventData(response));
             proxy.Close();
-
         }
 
         private void ProcessResultWithFault(IAsyncResult asyncResult)
         {
             var proxy = new UserGroupEventServiceProxy("BasicHttpBinding_IAsyncUserGroupEventService");
-
-
            
             var response = proxy.Result(asyncResult).EndGetUserGroupEventWithFault(asyncResult);
 
@@ -84,12 +88,12 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
 
         private void SetUserGroupEventData(UserGoupEventWithFault data)
         {
-            this.TxInfo.Text = data.Description;
+            TxInfo.Text = data.Description;
         }
 
         private void SetUserGroupEventData(UserGroupEvent data)
         {
-            this.TxInfo.Text = data.Description;
+            TxInfo.Text = data.Description;
         }
     }
 }

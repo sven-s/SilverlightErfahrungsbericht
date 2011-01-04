@@ -1,9 +1,46 @@
 Notizen für SL Vortrag
 
+Vorbereitung:
+Start von VS, Powerpoint
+Deaktivieren von alles Traytools
+Balanced Power
+Netzteil anschließen
+
+Einleitung
+Wenn Fragen, dann gleich direkt
+Bin kein Experte
+Beichte über Schmerzen und Freuden
+WCF setze ich schon länger ein (böse Zungen behaupten ja: ist ja ach nichts anderes als WebSerivces, nur komplizierter)
+Silverlight: gestartet mit Version 2 und dann mit auf 3 migriert
+Projektrahmen: Intranetapplikation zur Planung von Produktionsversuchen bei einem Klebebandhersteller
+
+Architekturdiagramm
+Video zeigen!
+
+Architektur von SL
+Fokus war zuerst nur Media, dann mehr auch LOB (Line of Business)
+
+SL Assemblies
+in VS: SL Assemblies sehen anders aus (optisch).
+In References auf den Object Browser verweisen
+Target wird in Projekteingenschaften angezeigt
+
+
 1. Erstellen von Verküpfungen
  - Technisch können die selben .NET SL Assemblies verwendet werden
  - Visual Studio erlaubt aber keine Querreferenzen 
- - Gemeinsame Helperklassen lassen sich so leichter erstellen
+ - Gemeinsame Helperklassen lassen sich so leichter erstellen wie static Methods (DRY)
+ - mittels Compiler Direktiven kann Code ausgeblendet werden
+
+WCF (Indigo)  dienstorientierte Kommunikationsplattform für verteilte Anwendungen
+verschiedenen Kommunikationstechnologien werden unter einer einheitlichen API zusammengefasst
+seit 3.0 - 6. Nov. 2006 
+
+Die Address (Adresse) ist ein URI, der den Ort des Dienstes beschreibt und somit seine Erreichbarkeit für die Dienstkonsumenten kennzeichnet.
+Das Binding (Anbindung) beschreibt die Art der Kommunikation, worunter unter anderem die Merkmale der Kodierung und des Protokolls fallen.
+Der Contract (Vertrag) stellt die Dienstdefinition, insbesondere die zur Verfügung gestellten Methoden beinhaltend, dar.
+
+Demo in VS! Nur Code zeigen
 
 2. WCF
  - Service Contract Attribut nie direkt an der Implementation anwenden
@@ -21,9 +58,53 @@ Tipps bei WCF Problemen:
 - mit Internet Explorer direkt auf Service zugreifen (http://localhost:50738/UserGroupEvent.svc)
 - TestClient mit automatischer ServiceReference erstellen
 
+Async Pattern
+Gibt an, dass ein Vorgang mit dem Methodenpaar Begin<methodName> und End<methodName> in einem Dienstvertrag asynchron implementiert wird.
+Wichtig: Nur Begin und End davor setzen und schon geht es ab
+There is no OperationContractAttribute for the end method.
+
+
+3. OperationInvoker:
+IContainsFaultDetail und FaultDetail zeigen
+UserGroupEventWithFault zeigen
+IUserGroupEventService zeigen
+
+IValueConverter
+Sichtbarkeit, Farben, etc lassen damit elegant binden
+
+--- MVVM
+View:
+A View is a class that represents the user interface that the user will see. 
+In Silverlight this is the MainPage.xaml or Page.xaml class, for example. 
+The View contains the visual controls that will be shown to the user and can also 
+contain animations, navigation aspects, themes, and other 
+interactive features for the purpose of the visual presentation. 
+In Silverlight and WPF the View also contains binding extensions that 
+identify the data points that will be presented to the user (embedded in XAML). 
+The bindings point to the names of the data point properties, but do not have 
+awareness of where those properties are nor where they come from. 
+The bindings are activated when the View’s DataContext is set to a class that 
+contains the source for the bindings.
+
+Model:
+A class that represents data points describing a specific entity.  
+For example, a Customer class with properties such as CompanyName and CustomerId. 
+The Model can contains child Model’s too, like any object graph. So a Customer Model 
+can contain a property named Orders which is a set of Order Models.
+The Model’s purpose is to represent the data points and it has no knowledge
+of where it will be presented to a user nor how it will be presented. 
+It’s single responsibility is to represent the data points.
+
+ViewModel
+The ViewModel is the glue between the View and the outside world. 
+The ViewModel is what the View is bound to. 
+The View’s DataContext is set to an instance of a ViewModel class. 
+This is where all of the bindings declared in the View’s XAML The ViewModel 
+contains the Model, so it has all of the data points needed in many cases right there.
+ The ViewModel also can declare public properties for Commands 
+ (ways to invoke actions from the View to the ViewModel) 
+ and other properties that can be bound to the View.
 
 Offene Fragen:
 String oder string
 [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
-
-test

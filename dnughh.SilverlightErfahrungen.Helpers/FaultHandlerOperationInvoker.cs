@@ -7,8 +7,6 @@ namespace dnughh.SilverlightErfahrungen.Helpers
 {
     public class FaultHandlerOperationInvoker : IOperationInvoker
     {
-        //- $InnerOperationInvoker -//
-
         public FaultHandlerOperationInvoker(IOperationInvoker operationInvoker)
         {
             InnerOperationInvoker = operationInvoker;
@@ -25,7 +23,7 @@ namespace dnughh.SilverlightErfahrungen.Helpers
 
         public Object Invoke(Object instance, Object[] inputs, out Object[] outputs)
         {
-            outputs = new Object[] {};
+            outputs = new Object[] { };
             var messageHeadersElement = OperationContext.Current.IncomingMessageHeaders;
             Object returnObject = null;
             try
@@ -36,21 +34,18 @@ namespace dnughh.SilverlightErfahrungen.Helpers
             {
                 if (messageHeadersElement.FindHeader("DoesNotHandleFault", "") > -1)
                 {
-                    if (returnObject == null)
+                    var invokerType = InnerOperationInvoker.GetType();
+                    var pi = invokerType.GetProperty("Method");
+                    var mi = (MethodInfo)pi.GetValue(InnerOperationInvoker, null);
+                    var returnType = mi.ReturnType;
+                    var interfaceType = returnType.GetInterface("dnughh.SilverlightErfahrungen.Helpers.IContainsFaultDetail");
+                    if (interfaceType != null)
                     {
-                        var invokerType = InnerOperationInvoker.GetType();
-                        var pi = invokerType.GetProperty("Method");
-                        var mi = (MethodInfo) pi.GetValue(InnerOperationInvoker, null);
-                        var returnType = mi.ReturnType;
-                        var interfaceType = returnType.GetInterface("dnughh.SilverlightErfahrungen.Helpers.IContainsFaultDetail");
-                        if (interfaceType != null)
-                        {
-                            returnObject = Activator.CreateInstance(returnType);
-                        }
+                        returnObject = Activator.CreateInstance(returnType);
                     }
                     if (returnObject != null && returnObject is IContainsFaultDetail)
                     {
-                        ((IContainsFaultDetail) returnObject).FaultDetail = FaultDetail.CreateFaultDetail(ex.Message);
+                        ((IContainsFaultDetail)returnObject).FaultDetail = FaultDetail.CreateFaultDetail(ex.Message);
                     }
                 }
                 else
@@ -58,7 +53,7 @@ namespace dnughh.SilverlightErfahrungen.Helpers
                     throw;
                 }
             }
-            //+
+
             return returnObject;
         }
 
@@ -72,7 +67,6 @@ namespace dnughh.SilverlightErfahrungen.Helpers
             return InnerOperationInvoker.InvokeEnd(instance, out outputs, result);
         }
 
-        //- @IsSynchronous -//
         public Boolean IsSynchronous
         {
             get { return InnerOperationInvoker.IsSynchronous; }

@@ -7,8 +7,6 @@ namespace dnughh.SilverlightErfahrungen.Contract
         public static class Namespace
         {
             public const string UserGroupEventService = NamespaceRoot + "/UserGroupEventService/";
-
-           
         }
     }
 }

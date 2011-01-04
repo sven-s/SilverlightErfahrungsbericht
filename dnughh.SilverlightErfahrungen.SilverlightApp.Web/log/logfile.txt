@@ -192,3 +192,55 @@ System.ServiceModel.ServiceActivationException: The service '/UserGroupEvent.svc
 26.12.10 15:01:09 INFO  dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Application_Stop
 26.12.10 15:01:18 INFO  dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global #############################################################
 26.12.10 15:01:18 INFO  dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Application_Start
+03.01.11 22:51:31 INFO  dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global #############################################################
+03.01.11 22:51:31 INFO  dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Application_Start
+03.01.11 22:51:31 ERROR dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Error
+System.Web.HttpException (0x80004005): File does not exist.
+   at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+03.01.11 22:51:32 ERROR dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Error
+System.Web.HttpException (0x80004005): File does not exist.
+   at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+03.01.11 22:51:44 ERROR dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Error
+System.Web.HttpException (0x80004005): File does not exist.
+   at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+03.01.11 22:52:15 ERROR dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Error
+System.Web.HttpException (0x80004005): File does not exist.
+   at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+03.01.11 22:52:20 ERROR dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Error
+System.Web.HttpException (0x80004005): File does not exist.
+   at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+03.01.11 22:52:48 ERROR dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Error
+System.Web.HttpException (0x80004005): File does not exist.
+   at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+03.01.11 22:53:05 ERROR dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Error
+System.Web.HttpException (0x80004005): File does not exist.
+   at System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   at System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context, String overrideVirtualPath)
+   at System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+03.01.11 23:27:19 INFO  dnughh.SilverlightErfahrungen.SilverlightApp.Web.Global Application_Stop
