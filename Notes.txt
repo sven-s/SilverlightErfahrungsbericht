@@ -59,7 +59,8 @@ Tipps bei WCF Problemen:
 - TestClient mit automatischer ServiceReference erstellen
 
 Async Pattern
-Gibt an, dass ein Vorgang mit dem Methodenpaar Begin<methodName> und End<methodName> in einem Dienstvertrag asynchron implementiert wird.
+Gibt an, dass ein Vorgang mit dem Methodenpaar Begin<methodName> und End<methodName> 
+in einem Dienstvertrag asynchron implementiert wird.
 Wichtig: Nur Begin und End davor setzen und schon geht es ab
 There is no OperationContractAttribute for the end method.
 
@@ -68,6 +69,20 @@ There is no OperationContractAttribute for the end method.
 IContainsFaultDetail und FaultDetail zeigen
 UserGroupEventWithFault zeigen
 IUserGroupEventService zeigen
+
+
+INotifyPropertyChanged
+AOP
+verschiedene logische Aspekte eines Anwendungsprogramms (kurz Anwendung) getrennt voneinander zu entwerfen, 
+zu entwickeln und zu testen. 
+Die getrennt entwickelten Aspekte werden dann zur endgültigen Anwendung zusammengefügt.
+Aspekte beziehungsweise Concerns in diesem Sinne sind alle eigenständigen Anforderungen der Anwendung, 
+die nicht einem einzigen (Klassen-)Modul zugeordnet werden können, sondern vielmehr von mehreren Modulen 
+berücksichtigt werden müssen. Bei einer Lagerverwaltung zum Beispiel sind Bestandsverwaltung, #
+Disposition und Nachschub mögliche Module. Aspekte sind z. B. Anforderungen wie Transaktionsverwaltung, 
+Auditfähigkeit und Loggingverhalten, die für alle Module in der Lagerverwaltung gelten. 
+Also behandelt ein Aspekt einen Cross-Cutting Concern („querschnittlichen Belang“) von mehreren Softwaremodulen.
+
 
 IValueConverter
 Sichtbarkeit, Farben, etc lassen damit elegant binden

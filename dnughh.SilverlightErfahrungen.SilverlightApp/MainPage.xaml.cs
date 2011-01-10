@@ -18,7 +18,7 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
 
         void MainPageLoaded(object sender, RoutedEventArgs e)
         {
-            
+
             // Simple Version
             var basicHttpBinding = new BasicHttpBinding();
             var endpointAddress = new EndpointAddress("http://localhost:50738/UserGroupEvent.svc");
@@ -30,6 +30,8 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
                 Dispatcher.BeginInvoke(() => SetUserGroupEventData(response));
             };
             userGroupEventService.BeginGetUserGroupEvent("123", asyncCallBack, userGroupEventService);
+
+
 
 
             // Deluxe Variante mit eigenem Proxy
@@ -44,18 +46,6 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
                 messageHeadersElement.Add(MessageHeader.CreateHeader("DoesNotHandleFault", "", true));
                 channel.BeginGetUserGroupEventWithFault("123", ProcessResultWithFault, channel);
             }
-
-
-            //var objectClient = new ObjectClient<IAsyncUserGroupEventService>("BasicHttpBinding_IAsyncUserGroupEventService");
-            //objectClient.Begin("GetUserGroupEvent", OnObjectServiceCallback, null, "F488D20B-FC27-4631-9FB9-83AF616AB5A6");
-        }
-
-
-        private void OnObjectServiceCallback(Object sender, ObjectClient<IAsyncUserGroupEventService>.ClientEventArgs ea)
-        {
-            var data = ea.LoadResult<UserGroupEvent>();
-            Dispatcher.BeginInvoke(() => this.TxInfo.Text = data.Description);
-
         }
 
         private void ProcessResult(IAsyncResult asyncResult)
@@ -70,7 +60,7 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
         private void ProcessResultWithFault(IAsyncResult asyncResult)
         {
             var proxy = new UserGroupEventServiceProxy("BasicHttpBinding_IAsyncUserGroupEventService");
-           
+
             var response = proxy.Result(asyncResult).EndGetUserGroupEventWithFault(asyncResult);
 
             if (response.FaultDetail == null)
@@ -79,11 +69,12 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
             }
             else
             {
-               // Log.WarnFormat("LoadSerie() {0}", response.FaultDetail.Message);
+                // Handle the error
+
+                // Log.WarnFormat("ProcessResultWithFault() {0}", response.FaultDetail.Message);
             }
 
             proxy.Close();
-
         }
 
         private void SetUserGroupEventData(UserGoupEventWithFault data)
@@ -94,6 +85,7 @@ namespace dnughh.SilverlightErfahrungen.SilverlightApp
         private void SetUserGroupEventData(UserGroupEvent data)
         {
             TxInfo.Text = data.Description;
+
         }
     }
 }

@@ -6,7 +6,7 @@ namespace dnughh.SilverlightErfahrungen.Contract
 
         void MethodToCall();
 
-
+    
 #if NETCLR
         void OnlyNetClr();
 #endif
